@@ -22,7 +22,7 @@ public class object{
     sprite = new Texture(imageFilePath);
     xv = yv = 0;
 //     gravity = 0.25;
-    gravity = initWidth/64*5;
+    gravity = initWidth/64*10;
   }
   public double getX(){
     return x;

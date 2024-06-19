@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class enemy extends object{
   Random rand;
-  private double movemultiplier = 1;
+  private static double movemultiplier = 1;
   public enemy(int initx, int inity, int initWidth, int initHeight, String imageFilePath, int speed){
     super(initx, inity, initWidth, initHeight, imageFilePath);
     xv = -speed;
@@ -23,7 +23,7 @@ public class enemy extends object{
     if (x + width < 0){
       x += Gdx.graphics.getWidth() * 2;
       y = rand.nextInt(Gdx.graphics.getHeight() - height);
-      movemultiplier *= 1.1;
+      movemultiplier *= 1.025;
     }
     return;
   }
