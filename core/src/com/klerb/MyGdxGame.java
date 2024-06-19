@@ -19,6 +19,9 @@ public class MyGdxGame extends ApplicationAdapter {
 	int separation;
 	Music menu_music;
 	Music game_music;
+	Texture background;
+	parralaxelement stars;
+	parralaxelement farplanets;
 
 	@Override
 	public void create () {
@@ -27,16 +30,20 @@ public class MyGdxGame extends ApplicationAdapter {
     font.getData().setScale(2);
     int width = (int)(Gdx.graphics.getHeight() / 7);
     title_screen = new Texture("title_screen.png");
+    background = new Texture("notmyassets/space-background/parallax-space-backgound.png");
+    stars = new parralaxelement(-1, new Texture("notmyassets/space-background/parallax-space-stars.png"));
+    farplanets = new parralaxelement(-2, new Texture("notmyassets/space-background/parallax-space-far-planets.png"));
+
     title_screen_x = (int)(Gdx.graphics.getWidth() / 2 - 640 / 2);
     title_screen_y = (int)(Gdx.graphics.getHeight() / 2 - 480 / 2);
-		borris = new player(width/2, 0, width, width, "klerb.png");
+		borris = new player(width/2, 0, width, width, "player.png");
 		myInput = new inputHandler();
 		Gdx.input.setInputProcessor(myInput);
 		enemies = new enemy[4];
 		separation = Gdx.graphics.getWidth() / enemies.length * 2;
 		for (int i = 0; i < enemies.length; i++){
 		   // enemy(int initx, int inity, int initWidth, int initHeight, String imageFilePath)
-		   enemies[i] = new enemy(separation * i, 0, width, width, "enemy.png", Gdx.graphics.getWidth() / 640 * 5);
+		   enemies[i] = new enemy(separation * i, 0, width, width, "badguy.png", Gdx.graphics.getWidth() / 640 * 5);
 		}
 		menu_music = Gdx.audio.newMusic(Gdx.files.internal("klerb_theme.mp3"));
 		game_music = Gdx.audio.newMusic(Gdx.files.internal("notmyassets/background-music.mp3"));
@@ -60,11 +67,15 @@ public class MyGdxGame extends ApplicationAdapter {
   	    enemies[i].update();
   	    if (enemies[i].isColliding(borris)){
   	      playing = false;
+  	      enemy.reset();
   	    }
   	  }
-
-  		ScreenUtils.clear(0.2f, 0.2f, 0.2f, 1);
+      stars.update();
+      farplanets.update();
   		batch.begin();
+      batch.draw(background, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+      stars.render(batch);
+      farplanets.render(batch);
   	  for (int i = 0; i < enemies.length; i++){
   	    enemies[i].render(batch);
   	  }
@@ -81,18 +92,23 @@ public class MyGdxGame extends ApplicationAdapter {
           enemies[i].x = separation * i;
           enemies[i].x += Gdx.graphics.getWidth() * 2;
           enemies[i].randomY();
-          enemies[i].reset();
+          enemy.reset();
 		    }
   	    playing = true;
   	    inputHandler.touched = false;
   	  }
+	    stars.update();
+      farplanets.update();
   		batch.begin();
-		  ScreenUtils.clear(0.2f, 0.2f, 0.2f, 1);
+// 		  ScreenUtils.clear(0.2f, 0.2f, 0.2f, 1);
 // 		  font.getData().setScale(2);
 // 		  font.draw(batch, "Klerb", 10, 300);
 // 		  font.getData().setScale(1);
 // 		  font.draw(batch, "Tap or click to start", 10, 250);
 // 		  batch.draw(borris.sprite, 256, 128, 128, 128);
+      batch.draw(background, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+      stars.render(batch);
+      farplanets.render(batch);
       batch.draw(title_screen, title_screen_x, title_screen_y, 640, 480);
 		  batch.end();
 		}

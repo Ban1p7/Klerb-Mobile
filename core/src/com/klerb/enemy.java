@@ -14,7 +14,7 @@ public class enemy extends object{
     xv = -speed;
     rand = new Random();
   }
-  public void reset(){
+  public static void reset(){
     movemultiplier = 1;
   }
   public void update(){
@@ -29,5 +29,8 @@ public class enemy extends object{
   }
   public void randomY(){
     y = rand.nextInt(Gdx.graphics.getHeight() - height);
+  }
+  public static double getmovemultiplier(){
+    return movemultiplier;
   }
 }
