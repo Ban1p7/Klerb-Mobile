@@ -38,12 +38,12 @@ Go to [the libGDX site](https://libgdx.com) and figure it out on your own. I bel
 Whatever license is in the LICENSE file is my license for all the code that I've made, but the gradlew and gradlew.bat and build.gradle files might have their own
 licenses (?), I just generated it all from the [libGDX project creator](https://libgdx.com), though I guess the gradlew and gradlew.bat would be [gradlew's](https://gradle.org/).
 The point is, they're not mine; I'm not claiming that anything related to the build system is mine. Also, any platform-specific code, like in the android, desktop, html, etc. folders
-was generated also by the libGDX project creator.
-The font in the title screen is [pixeloid mono](https://www.fontspace.com/pixeloid-font-f69232) -- License: SIL Open Font License (OFL).
-Ingame background music (assets/notmyassets/background-music.mp3) is "[retro crime movie beat.wav](https://freesound.org/s/388389/)" by zagi2 -- License: Attribution NonCommercial 4.0
-Menu music (klerb\_theme.mp3) is made by me using [online sequencer](https://onlinesequencer.net/) -- License: Creative Commons Attribution Share Alike 4.0 International (see assets/myassetslicense)
-All image assets outside of the assets/notmyassets folder were made by me in GIMP -- License: Creative Commons Attribution Share Alike 4.0 International (see assets/myassetslicense)
-Also note that the myassetslicense does not apply to any assets used that are in the assets/notmyassets folder, or any assets that have their license otherwise stated above.
+was generated also by the libGDX project creator.\
+The font in the title screen is [pixeloid mono](https://www.fontspace.com/pixeloid-font-f69232) -- License: SIL Open Font License (OFL).\
+Ingame background music (assets/notmyassets/background-music.mp3) is "[retro crime movie beat.wav](https://freesound.org/s/388389/)" by zagi2 -- License: Attribution NonCommercial 4.0\
+Menu music (klerb\_theme.mp3) is made by me using [online sequencer](https://onlinesequencer.net/) -- License: Creative Commons Attribution Share Alike 4.0 International (see assets/myassetslicense)\
+All image assets outside of the assets/notmyassets folder were made by me in GIMP -- License: Creative Commons Attribution Share Alike 4.0 International (see assets/myassetslicense)\
+Also note that the myassetslicense does not apply to any assets used that are in the assets/notmyassets folder, or any assets that have their license otherwise stated above.\
 If I used your asset and you want me to remove it, please tell me and I'll replace it with a different one.
 
 
