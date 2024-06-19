@@ -18,15 +18,17 @@ public class MyGdxGame extends ApplicationAdapter {
 		batch = new SpriteBatch();
 		font = new BitmapFont();
     font.getData().setScale(2);
-		borris = new player(32, 0, 64, 64, "klerb.png");
+    int width = (int)(Gdx.graphics.getHeight() / 7);
+		borris = new player(width/2, 0, width, width, "klerb.png");
 		myInput = new inputHandler();
 		Gdx.input.setInputProcessor(myInput);
 		enemies = new enemy[4];
 		int separation = Gdx.graphics.getWidth() / enemies.length * 2;
 		for (int i = 0; i < enemies.length; i++){
 		   // enemy(int initx, int inity, int initWidth, int initHeight, String imageFilePath)
-		   enemies[i] = new enemy(Gdx.graphics.getWidth() + separation * i, 0, 64, 64, "enemy.png", 5);
+		   enemies[i] = new enemy(separation * i, 0, width, width, "enemy.png", Gdx.graphics.getWidth() / 640 * 5);
 		}
+		System.out.println(Gdx.graphics.getWidth());
 	}
 
 	@Override
@@ -54,6 +56,11 @@ public class MyGdxGame extends ApplicationAdapter {
   		batch.end();
 		} else {
 		  if (inputHandler.touched){
+        for (int i = 0; i < enemies.length; i++){
+          enemies[i].x += Gdx.graphics.getWidth() * 2;
+          enemies[i].randomY();
+          enemies[i].reset();
+		    }
   	    playing = true;
   	    inputHandler.touched = false;
   	  }
