@@ -6,7 +6,7 @@ A klerb game in java using libGDX
 #### [Klerb 2](https://nebjs.itch.io/klerb2)
 
 ## Quick description
-I feel I don't really need to be more descriptive than that. You can play it, I guess. Just run `git clone https://github.com/Ban1p7/klerb-clone-java.git` then navigate there in your file browser and run `./gradlew desktop:run`. Or do something similar with the gradle.bat file if you're on Windows, I've never used it and just kept it in for compatability. You do need to have a version of a JDK installed for it to work, I'm on Java 21.0.3 2024-04-16 LTS, but others probably work too. Uhh, yeah. That's about it.
+I feel I don't really need to be more descriptive than that. You can play it, I guess. Just run `git clone https://github.com/Ban1p7/Klerb-Mobile.git` then navigate there in your file browser and run `./gradlew desktop:run`. Or do something similar with the gradle.bat file if you're on Windows, I've never used it and just kept it in for compatability. You do need to have a version of a JDK installed for it to work, I'm on Java 21.0.3 2024-04-16 LTS, but others probably work too. Uhh, yeah. That's about it.
 
 
 ## How to build
@@ -14,7 +14,7 @@ Use gradle.
 
 ### Linux
 ```
-git clone https://github.com/Ban1p7/klerb-clone-java.git
+git clone https://github.com/Ban1p7/Klerb-Mobile.git
 cd klerb-clone-java
 chmod +x gradlew
 ./gradlew desktop:run
@@ -22,7 +22,7 @@ chmod +x gradlew
 ### Windows
 On windows I'd assume it's the following, but I don't really have any idea.
 ```
-git clone https://github.com/Ban1p7/klerb-clone-java.git
+git clone https://github.com/Ban1p7/Klerb-Mobile.git
 cd klerb-clone-java
 ./gradle.bat desktop:run
 ```
